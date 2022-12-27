@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>begin</name>
+    <events>
+        <include>menu</include>
+        <include>variable</include>
+        <include>player</include>
+        <event-group description="Ações durante o Gameplay" sid="213065163341828" title="Gameplay">
+            <sub-events>
+                <comment>Ao iniciar Layout, fixar camera no Jogador</comment>
+                <event-block sid="838297907589420">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="430384461639478" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="564043251573139" type="obj_player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>A todo momento, manter camera mais próxima do Jogador e atualizar nº de Mercadorias</comment>
+                <event-block sid="789047335947488">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="981696572278062" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-20" name="Set layout scale" sid="122691863300547" type="System">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="202043785651151" type="txt_mercadoria">
+                            <param id="0" name="Text">var_product</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Menu enquanto você estiver controlando Player" sid="429480820384643" title="Menu in Gameplay">
+            <sub-events>
+                <comment>Abrir Menu Suspenso dentro do game</comment>
+                <event-block sid="472424246851604">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="782169020246326" type="Keyboard">
+                            <param id="0" name="Key">67</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="862617642109640">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="876705602696078" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="587145734601647" type="Function">
+                                    <param id="0" name="Name">&quot;AtivaMenu&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="912626853282006">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="459678220762609" type="Keyboard">
+                            <param id="0" name="Key">67</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="921271309690344">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="266819429779736" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="519925393586918" type="Function">
+                                    <param id="0" name="Name">&quot;DesativaMenu&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Menu suspenso dentro do game</comment>
+                <event-block sid="624509787676378">
+                    <conditions>
+                        <condition id="0" name="On function" sid="498847806582900" type="Function">
+                            <param id="0" name="Name">&quot;AtivaMenu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="162341518965299" type="System">
+                            <param id="0" name="Variable">var_menu_player</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="554676381854781">
+                    <conditions>
+                        <condition id="0" name="On function" sid="533357478942348" type="Function">
+                            <param id="0" name="Name">&quot;DesativaMenu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="872987796912666" type="System">
+                            <param id="0" name="Variable">var_menu_player</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Após mudança da variável ,</comment>
+                <event-block sid="379462247325642">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="811753039493590" type="System">
+                            <param id="0" name="Variable">var_menu_player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="586894356881719" type="System">
+                            <param id="0" name="Layer">4</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="818078185337584" type="System">
+                            <param id="0" name="Group name">&quot;PlayerMoviment&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="300360787139562">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="572873873804968" type="System">
+                            <param id="0" name="Variable">var_menu_player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="916698734947722" type="System">
+                            <param id="0" name="Layer">4</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="953781925185001" type="System">
+                            <param id="0" name="Group name">&quot;PlayerMoviment&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="197592423489760">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="357713565309217" type="spf_menu_write">
+                            <param id="0" name="Instance variable">ins_opcao</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">obj_cursor.ins_cursor</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="536630829833384" type="obj_cursor">
+                            <param id="0" name="Y">spf_menu_write.Y</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="835629054777825" type="spf_menu_write">
+                            <param id="0" name="Effect">&quot;Brightness&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">200</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="337895809451256">
+                    <conditions>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="742074743263294" type="spf_menu_write">
+                            <param id="0" name="Instance variable">ins_opcao</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">obj_cursor.ins_cursor</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="158715089491988" type="spf_menu_write">
+                            <param id="0" name="Effect">&quot;Brightness&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
