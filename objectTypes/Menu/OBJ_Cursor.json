@@ -1,0 +1,63 @@
+{
+	"name": "OBJ_Cursor",
+	"plugin-id": "Sprite",
+	"sid": 399762513344566,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "INSV_Cursor",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 934668581519418
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 463355292951862
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 170,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9538721,
+						"collisionPoly": {
+							"points": [
+								0.14705882352941177,
+								0,
+								0.8529411764705882,
+								0,
+								0.8529411764705882,
+								1,
+								0.14705882352941177,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 953056115345485,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

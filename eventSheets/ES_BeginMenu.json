@@ -1,0 +1,419 @@
+{
+	"name": "ES_BeginMenu",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ES_Variable"
+		},
+		{
+			"eventType": "comment",
+			"text": "Iniciar jogo em FULLSCREEN quando executar em NW.js"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 296587687680974
+				}
+			],
+			"actions": [],
+			"sid": 350197868788873,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 556546144777110,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "FullScreen On/Offf",
+							"sid": 825470226732282
+						}
+					],
+					"sid": 225915401152851
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Controle do Menu Inicial através das teclas W e S."
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "MenuKeyboard",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Função de apertar tecla para baixo e trocar opção"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 498493713230316,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "OBJ_Cursor",
+									"sid": 774306939163805,
+									"parameters": {
+										"instance-variable": "INSV_Cursor",
+										"comparison": 2,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "OBJ_Cursor",
+									"sid": 873034895474391,
+									"parameters": {
+										"instance-variable": "INSV_Cursor",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 410013272985135
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 657499033025421,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "OBJ_Cursor",
+									"sid": 981004554442029,
+									"parameters": {
+										"instance-variable": "INSV_Cursor",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "OBJ_Cursor",
+									"sid": 278931982789389,
+									"parameters": {
+										"instance-variable": "INSV_Cursor",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 646573031095720
+						}
+					],
+					"sid": 608348330289273
+				},
+				{
+					"eventType": "comment",
+					"text": "Comportamento do Menu e animação"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "MenuControl",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Efeito de FLASH no OBJ_Cursor"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 534656272910156
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "OBJ_Cursor",
+									"sid": 989489287251093,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.5",
+										"off-time": "0.5",
+										"duration": "9999"
+									}
+								}
+							],
+							"sid": 556082131967653
+						},
+						{
+							"eventType": "comment",
+							"text": "Função de alinhar OBJ Cursor com Texto de Menu"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "FONT_Menu",
+									"sid": 547295007674715,
+									"parameters": {
+										"instance-variable": "INSV_Option",
+										"comparison": 0,
+										"value": "OBJ_Cursor.INSV_Cursor"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "OBJ_Cursor",
+									"sid": 320671482768399,
+									"parameters": {
+										"y": "FONT_Menu.Y"
+									}
+								}
+							],
+							"sid": 364039157043174
+						},
+						{
+							"eventType": "comment",
+							"text": "Efeito de brilho nos textos do MENU"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "FONT_Menu",
+									"sid": 815550180004279,
+									"parameters": {
+										"instance-variable": "INSV_Option",
+										"comparison": 0,
+										"value": "OBJ_Cursor.INSV_Cursor"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-parameter",
+									"objectClass": "FONT_Menu",
+									"sid": 839875317414896,
+									"parameters": {
+										"effect": "\"Brightness\"",
+										"parameter-index": "0",
+										"value": "200"
+									}
+								}
+							],
+							"sid": 689061714243958
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "FONT_Menu",
+									"sid": 450843937988372,
+									"parameters": {
+										"instance-variable": "INSV_Option",
+										"comparison": 0,
+										"value": "OBJ_Cursor.INSV_Cursor"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-parameter",
+									"objectClass": "FONT_Menu",
+									"sid": 330928371923655,
+									"parameters": {
+										"effect": "\"Brightness\"",
+										"parameter-index": "0",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 425203207706400
+						}
+					],
+					"sid": 216216794513384
+				},
+				{
+					"eventType": "comment",
+					"text": "Ações do Menu: O que ele faz em cada Opção selecionada"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "MenuAction",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Sistema de ação no Menu, configuração do que fazer após pressionar a tecla ESPAÇO"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 358389569185709,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [],
+							"sid": 665621348495759,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Verificar a opção selecionada e após verificar..."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 174575534331463,
+											"parameters": {
+												"object": "FONT_Menu",
+												"expression": "FONT_Menu.INSV_Option",
+												"comparison": 0,
+												"value": "OBJ_Cursor.INSV_Cursor"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 256735320996757,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Ação: NEW GAME"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "FONT_Menu",
+													"sid": 361527016328673,
+													"parameters": {
+														"instance-variable": "INSV_Action",
+														"comparison": 0,
+														"value": "\"New Game\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 197408227147979,
+													"parameters": {
+														"layout": "LAYOUT_Begin"
+													}
+												}
+											],
+											"sid": 520097582034504
+										},
+										{
+											"eventType": "comment",
+											"text": "Ação: FULLSCREEN"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "FONT_Menu",
+													"sid": 137349681777436,
+													"parameters": {
+														"instance-variable": "INSV_Action",
+														"comparison": 0,
+														"value": "\"Options\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "FullScreen On/Offf",
+													"sid": 399863715343021
+												}
+											],
+											"sid": 510926438280176
+										},
+										{
+											"eventType": "comment",
+											"text": "Ação: QUIT GAME"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "FONT_Menu",
+													"sid": 272703802317012,
+													"parameters": {
+														"instance-variable": "INSV_Action",
+														"comparison": 0,
+														"value": "\"Quit Game\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "close",
+													"objectClass": "Browser",
+													"sid": 788476464483998
+												}
+											],
+											"sid": 216290928899738
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 913736758650941
+				}
+			],
+			"sid": 133812406530686
+		}
+	],
+	"sid": 665522470533365
+}

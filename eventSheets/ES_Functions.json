@@ -1,0 +1,229 @@
+{
+	"name": "ES_Functions",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PlayerFunction",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Função de ANDAR para ESQUERDA: seta a variavel instanciada do OBJ_Player para animação de andar para ESQUERDA"
+				},
+				{
+					"functionName": "FUNC_Walk_Left",
+					"functionDescription": "Player moviment to left",
+					"functionCategory": "Player Moviment",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "OBJ_Player",
+							"sid": 818268777859200,
+							"parameters": {
+								"instance-variable": "INSV_PlayerDirection",
+								"value": "\"ANIM_WalkLeft\""
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "OBJ_Player",
+							"sid": 915250559846965,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 150641578516719
+				},
+				{
+					"eventType": "comment",
+					"text": "Função de ANDAR para DIREITA: seta a variavel instanciada do OBJ_Player para animação de andar para DIREITA"
+				},
+				{
+					"functionName": "FUNC_Walk_Right",
+					"functionDescription": "Player moviment to right",
+					"functionCategory": "Player Moviment",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "OBJ_Player",
+							"sid": 372836501613483,
+							"parameters": {
+								"instance-variable": "INSV_PlayerDirection",
+								"value": "\"ANIM_WalkRight\""
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "OBJ_Player",
+							"sid": 391166731290929,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 737072076984325
+				},
+				{
+					"eventType": "comment",
+					"text": "Função de ANDAR para CIMA: seta a variavel instanciada do OBJ_Player para animação de andar para CIMA"
+				},
+				{
+					"functionName": "FUNC_Walk_Up",
+					"functionDescription": "Player moviment to up",
+					"functionCategory": "Player Moviment",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "OBJ_Player",
+							"sid": 716455716827914,
+							"parameters": {
+								"instance-variable": "INSV_PlayerDirection",
+								"value": "\"ANIM_WalkUp\""
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "OBJ_Player",
+							"sid": 590389726701186,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 316657691728843
+				},
+				{
+					"eventType": "comment",
+					"text": "Função de ANDAR para BAIXO: seta a variavel instanciada do OBJ_Player para animação de andar para BAIXO"
+				},
+				{
+					"functionName": "FUNC_Walk_Down",
+					"functionDescription": "Player moviment to down",
+					"functionCategory": "Player Moviment",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "OBJ_Player",
+							"sid": 505425457463582,
+							"parameters": {
+								"instance-variable": "INSV_PlayerDirection",
+								"value": "\"ANIM_WalkDown\""
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "OBJ_Player",
+							"sid": 202530564801924,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 618263600499142
+				}
+			],
+			"sid": 998453240763266
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ScreenFunction",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "LIGAR/DESLIGAR a função FULLSCREEN ao pressionar a tecla ESPAÇO"
+				},
+				{
+					"functionName": "FullScreen On/Offf",
+					"functionDescription": "Toggle FullScreen On/Off",
+					"functionCategory": "Camera",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 279552714286709,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 764954050604433
+								}
+							],
+							"actions": [
+								{
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 108032284172615
+								}
+							],
+							"sid": 768204017773579
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 309062403751075
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 518976676645228,
+									"parameters": {
+										"mode": "stretch-letterbox-scale",
+										"navigation-ui": "auto"
+									}
+								}
+							],
+							"sid": 630440201521584
+						}
+					]
+				}
+			],
+			"sid": 480573246339789
+		}
+	],
+	"sid": 677030330867551
+}

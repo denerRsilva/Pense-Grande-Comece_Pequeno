@@ -1,0 +1,53 @@
+{
+	"name": "ES_Begin",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ES_Variable"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ES_Functions"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ES_Player"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CameraStart",
+			"description": "Player's camera configuration",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Ao iniciar Game, Definir como FullScreen"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 840468457801488,
+							"parameters": {
+								"variable": "VAR_FullScreen"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "FullScreen On/Offf",
+							"sid": 488759447023986
+						}
+					],
+					"sid": 604069553699435,
+					"disabled": true
+				}
+			],
+			"sid": 207904542714014
+		}
+	],
+	"sid": 164045968913928
+}

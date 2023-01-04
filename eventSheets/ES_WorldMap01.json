@@ -1,0 +1,33 @@
+{
+	"name": "ES_WorldMap01",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 206433822024178
+				}
+			],
+			"actions": [],
+			"sid": 705255610486324
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 538114328713515,
+					"parameters": {
+						"tag": "\"Map01\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 673619558360396
+		}
+	],
+	"sid": 428995526853395
+}

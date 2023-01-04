@@ -1,0 +1,16 @@
+{
+	"name": "ES_Variable",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "VAR_FullScreen",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 710846368959961
+		}
+	],
+	"sid": 924398493548388
+}

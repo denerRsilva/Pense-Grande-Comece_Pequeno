@@ -1,0 +1,130 @@
+{
+	"name": "WorldMap01",
+	"layers": [
+		{
+			"name": "Floor",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 134699882609489,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Building",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Tilemap",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 24,
+					"instanceVariables": {},
+					"behaviors": {},
+					"ownData": {
+						"tilemapData": {
+							"width": 96,
+							"height": 96,
+							"max-width": 96,
+							"max-height": 96,
+							"data": "203x0,4,15x10,25,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,16,15x41,2,79x0,7,5x8,42,9x8,28,85x0,23,95x0,23,2x0,22,0,32,2x39,46,87x0,23,2x0,23,92x0,24,2x0,23,95x0,24,6699x0"
+						},
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1536,
+						"height": 1536,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 730573628130029,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 835851646635738,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1536,
+	"height": 1536,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "ES_WorldMap01"
+}

@@ -1,0 +1,349 @@
+{
+	"name": "ES_Player",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Configurações de movimentação do Player"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PlayerMoviment",
+			"description": "All Player moviment's",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Movimentação do Player atraves das teclas: A, W, S, D"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Keyboard",
+					"description": "Keyboard moviment config",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 825726075708400,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "FUNC_Walk_Left",
+									"sid": 948159293868477
+								}
+							],
+							"sid": 663666017117357
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 645789465228464,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "FUNC_Walk_Right",
+									"sid": 931458839032304
+								}
+							],
+							"sid": 941896728406727
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 608475629246898,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "FUNC_Walk_Up",
+									"sid": 964622211195393
+								}
+							],
+							"sid": 896194094292945
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 690183205732383,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "FUNC_Walk_Down",
+									"sid": 746186664296824
+								}
+							],
+							"sid": 488068493427820
+						}
+					],
+					"sid": 412972180949889
+				}
+			],
+			"sid": 647356849272162
+		},
+		{
+			"eventType": "comment",
+			"text": "Configurações de animação do Player"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PlayerAnimation",
+			"description": "All Player's animations",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "PlayerMovimentRefresh",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "A todo momento, setar animação para o lado que o Player estiver se movimentando"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 901797592313616
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "OBJ_Player",
+									"sid": 931013293366644,
+									"parameters": {
+										"animation": "OBJ_Player.INSV_PlayerDirection",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 177421932289129
+						}
+					],
+					"sid": 456808974126903
+				},
+				{
+					"eventType": "comment",
+					"text": "Ao se movimentar, ligar animação de ANDAR na velocidade definida"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "OBJ_Player",
+							"sid": 850549800667233,
+							"behaviorType": "8Direction"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 597284392603682,
+							"parameters": {
+								"group-name": "\"PlayerMovimentRefresh\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "OBJ_Player",
+							"sid": 434268696336977,
+							"parameters": {
+								"speed": "10"
+							}
+						}
+					],
+					"sid": 335843354394197
+				},
+				{
+					"eventType": "comment",
+					"text": "Caso Player parar de se movimentar LIGAR animação de IDLE"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 361587324825057
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 502520589497434,
+							"parameters": {
+								"group-name": "\"PlayerMovimentRefresh\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 777028203566566,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "OBJ_Player",
+									"sid": 981204657360314,
+									"parameters": {
+										"animation": "\"ANIM_WalkRight\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "OBJ_Player",
+									"sid": 107331883800309,
+									"parameters": {
+										"animation": "\"ANIM_IdleRight\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 125724724718229
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "OBJ_Player",
+									"sid": 831080632641762,
+									"parameters": {
+										"animation": "\"ANIM_WalkLeft\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "OBJ_Player",
+									"sid": 791015771990435,
+									"parameters": {
+										"animation": "\"ANIM_IdleLeft\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 503015654115240
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "OBJ_Player",
+									"sid": 641440901587989,
+									"parameters": {
+										"animation": "\"ANIM_WalkUp\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "OBJ_Player",
+									"sid": 241616894843617,
+									"parameters": {
+										"animation": "\"ANIM_IdleUp\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 641149534494864
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "OBJ_Player",
+									"sid": 440937442495111,
+									"parameters": {
+										"animation": "\"ANIM_WalkDown\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "OBJ_Player",
+									"sid": 794184979382156,
+									"parameters": {
+										"animation": "\"ANIM_IdleDown\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 919127473672983
+						}
+					]
+				}
+			],
+			"sid": 189985054942337
+		},
+		{
+			"eventType": "comment",
+			"text": "Configurações de ações do Player"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PlayerAction",
+			"description": "All Player's actions",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 491961197729690
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PlayerMenu",
+			"description": "Player's Menu in Gameplay",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 433971695941566
+		}
+	],
+	"sid": 505915911045801
+}
