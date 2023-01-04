@@ -341,7 +341,163 @@
 			"title": "PlayerMenu",
 			"description": "Player's Menu in Gameplay",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 689646599087292,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [],
+					"sid": 383074609189204,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-visible",
+									"objectClass": "OBJ_BGMenuPlayer",
+									"sid": 474554578562172,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "OBJ_BGMenuPlayer",
+									"sid": 452847045276670,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "OBJ_FaintScreen",
+									"sid": 378498354998014,
+									"parameters": {
+										"visibility": "toggle"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "OBJ_BGMenuPlayer",
+									"sid": 608836178909722,
+									"parameters": {
+										"x": "OBJ_Player.X+150",
+										"y": "OBJ_Player.Y"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 845326853934932,
+									"parameters": {
+										"time-scale": "0"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "OBJ_Player",
+									"sid": 343882598164242,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "OBJ_BGMenuPlayer",
+									"sid": 319370277601610,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 714424303188484,
+									"parameters": {
+										"group-name": "\"Keyboard\"",
+										"state": "toggle-active"
+									}
+								}
+							],
+							"sid": 662436124040720
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 998574256381493
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "OBJ_BGMenuPlayer",
+									"sid": 415427333895566,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "OBJ_FaintScreen",
+									"sid": 621794006992885,
+									"parameters": {
+										"visibility": "toggle"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 841746849887427,
+									"parameters": {
+										"time-scale": "1.0"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "OBJ_Player",
+									"sid": 349533426668953,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "OBJ_BGMenuPlayer",
+									"sid": 633988429549692,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 834635191206451,
+									"parameters": {
+										"group-name": "\"Keyboard\"",
+										"state": "toggle-active"
+									}
+								}
+							],
+							"sid": 492307638247098
+						}
+					]
+				}
+			],
 			"sid": 433971695941566
 		}
 	],

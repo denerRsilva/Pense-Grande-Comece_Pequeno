@@ -1,0 +1,51 @@
+{
+	"name": "OBJ_BGMenuPlayer",
+	"plugin-id": "Sprite",
+	"sid": 609683645497078,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "INSV_Visible",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 805949505554583
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 722253145279207
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 180,
+						"height": 220,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 705162,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 933839191718239,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -38,7 +38,7 @@
 					],
 					"actions": [
 						{
-							"callFunction": "FullScreen On/Offf",
+							"callFunction": "FullScreen On/Off",
 							"sid": 488759447023986
 						}
 					],

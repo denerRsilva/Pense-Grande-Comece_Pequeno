@@ -1,5 +1,5 @@
 {
-	"name": "FONT_Menu",
+	"name": "FONT_BeginMenu",
 	"plugin-id": "Spritefont2",
 	"sid": 572134750273651,
 	"isGlobal": false,
@@ -19,7 +19,13 @@
 			"sid": 252334333469432
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 667888647814804
+		}
+	],
 	"effectTypes": [
 		{
 			"effectId": "brightness",

@@ -64,6 +64,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "AJAX",
 			"name": "AJAX",
 			"author": "Scirra",
@@ -117,7 +125,8 @@
 			"OBJ_Player",
 			"Colliders",
 			"AJAX",
-			"Tilemap"
+			"Tilemap",
+			"Sprite"
 		],
 		"subfolders": [
 			{
@@ -143,11 +152,27 @@
 			},
 			{
 				"items": [
-					"OBJ_BGMenu",
-					"FONT_Menu",
 					"OBJ_Cursor"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"OBJ_BGMenu",
+							"FONT_BeginMenu",
+							"Text"
+						],
+						"subfolders": [],
+						"name": "BeginMenu"
+					},
+					{
+						"items": [
+							"OBJ_BGMenuPlayer",
+							"OBJ_FaintScreen"
+						],
+						"subfolders": [],
+						"name": "MenuPlayer"
+					}
+				],
 				"name": "Menu"
 			}
 		]
@@ -159,10 +184,7 @@
 		"subfolders": []
 	},
 	"layouts": {
-		"items": [
-			"LAYOUT_Begin",
-			"LAYOUT_BeginMenu"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -170,6 +192,20 @@
 				],
 				"subfolders": [],
 				"name": "WorldMap"
+			},
+			{
+				"items": [
+					"BeginMenu"
+				],
+				"subfolders": [],
+				"name": "Menu"
+			},
+			{
+				"items": [
+					"Store"
+				],
+				"subfolders": [],
+				"name": "Store"
 			}
 		]
 	},
@@ -284,7 +320,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "0.0.0.2",
+		"version": "0.0.0.5",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",
@@ -335,5 +371,5 @@
 	},
 	"viewportWidth": 448,
 	"viewportHeight": 252,
-	"firstLayout": "LAYOUT_BeginMenu"
+	"firstLayout": "BeginMenu"
 }
