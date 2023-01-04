@@ -821,5 +821,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "ES_Begin"
+	"eventSheet": "ES_Store"
 }

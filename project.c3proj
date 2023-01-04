@@ -48,16 +48,16 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
+			"id": "AJAX",
+			"name": "AJAX",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Spritefont2",
-			"name": "Sprite font",
+			"id": "Sprite",
+			"name": "Sprite",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -72,8 +72,8 @@
 		},
 		{
 			"type": "plugin",
-			"id": "AJAX",
-			"name": "AJAX",
+			"id": "Spritefont2",
+			"name": "Sprite font",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -124,9 +124,8 @@
 		"items": [
 			"OBJ_Player",
 			"Colliders",
-			"AJAX",
 			"Tilemap",
-			"Sprite"
+			"OBJ_LogoRR"
 		],
 		"subfolders": [
 			{
@@ -145,24 +144,25 @@
 					"Browser",
 					"Keyboard",
 					"Mouse",
-					"Touch"
+					"Touch",
+					"AJAX"
 				],
 				"subfolders": [],
-				"name": "Object Non-Physical"
+				"name": "Non-Physical Objects"
 			},
 			{
 				"items": [
-					"OBJ_Cursor"
+					"FONT_Menu"
 				],
 				"subfolders": [
 					{
 						"items": [
 							"OBJ_BGMenu",
-							"FONT_BeginMenu",
-							"Text"
+							"TXT_PressE",
+							"OBJ_Cursor"
 						],
 						"subfolders": [],
-						"name": "BeginMenu"
+						"name": "HomeMenu"
 					},
 					{
 						"items": [
@@ -195,7 +195,8 @@
 			},
 			{
 				"items": [
-					"BeginMenu"
+					"HomeMenu",
+					"MenuSettings"
 				],
 				"subfolders": [],
 				"name": "Menu"
@@ -211,12 +212,13 @@
 	},
 	"eventSheets": {
 		"items": [
-			"ES_Begin",
+			"ES_Store",
 			"ES_Player",
 			"ES_Functions",
 			"ES_Variable",
-			"ES_BeginMenu",
-			"ES_WorldMap01"
+			"ES_HomeMenu",
+			"ES_WorldMap01",
+			"ES_MenuSettings"
 		],
 		"subfolders": []
 	},
@@ -371,5 +373,5 @@
 	},
 	"viewportWidth": 448,
 	"viewportHeight": 252,
-	"firstLayout": "BeginMenu"
+	"firstLayout": "HomeMenu"
 }

@@ -1,5 +1,5 @@
 {
-	"name": "ES_Begin",
+	"name": "ES_Store",
 	"events": [
 		{
 			"eventType": "include",
@@ -26,16 +26,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 840468457801488,
-							"parameters": {
-								"variable": "VAR_FullScreen"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"callFunction": "FullScreen On/Off",

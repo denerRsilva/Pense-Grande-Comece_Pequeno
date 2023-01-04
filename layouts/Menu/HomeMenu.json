@@ -1,5 +1,5 @@
 {
-	"name": "BeginMenu",
+	"name": "HomeMenu",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -71,7 +71,7 @@
 					}
 				},
 				{
-					"type": "FONT_BeginMenu",
+					"type": "FONT_Menu",
 					"properties": {
 						"text": "Options",
 						"enable-bbcode": true,
@@ -79,7 +79,7 @@
 						"character-height": 16,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
 						"spacing-data": "",
-						"scale": 0.9,
+						"scale": 1,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "left",
@@ -109,7 +109,7 @@
 					"world": {
 						"x": 164.9474762652825,
 						"y": 200.88249015884105,
-						"width": 101.1890917813607,
+						"width": 112.10883995825102,
 						"height": 15.082491198354262,
 						"originX": 0,
 						"originY": 0.5,
@@ -124,7 +124,7 @@
 					}
 				},
 				{
-					"type": "FONT_BeginMenu",
+					"type": "FONT_Menu",
 					"properties": {
 						"text": "Quit Game",
 						"enable-bbcode": true,
@@ -132,7 +132,7 @@
 						"character-height": 16,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
 						"spacing-data": "",
-						"scale": 0.9,
+						"scale": 1,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "left",
@@ -160,9 +160,9 @@
 						}
 					},
 					"world": {
-						"x": 298.4833686223619,
+						"x": 292.28786805794766,
 						"y": 200.00730740027728,
-						"width": 129.84547860016923,
+						"width": 145.27311558246905,
 						"height": 13.590740318189688,
 						"originX": 0,
 						"originY": 0.5,
@@ -177,7 +177,7 @@
 					}
 				},
 				{
-					"type": "FONT_BeginMenu",
+					"type": "FONT_Menu",
 					"properties": {
 						"text": "New Game",
 						"enable-bbcode": true,
@@ -185,7 +185,7 @@
 						"character-height": 16,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
 						"spacing-data": "",
-						"scale": 0.9,
+						"scale": 1,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "left",
@@ -215,7 +215,7 @@
 					"world": {
 						"x": 18.354420762254364,
 						"y": 200.45450799139184,
-						"width": 116.66132220413473,
+						"width": 129.08369998282822,
 						"height": 15.082491198354262,
 						"originX": 0,
 						"originY": 0.5,
@@ -230,7 +230,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "OBJ_LogoRR",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -259,7 +259,7 @@
 					}
 				},
 				{
-					"type": "FONT_BeginMenu",
+					"type": "FONT_Menu",
 					"properties": {
 						"text": "Think BIG start small",
 						"enable-bbcode": true,
@@ -278,7 +278,7 @@
 					},
 					"uid": 29,
 					"instanceVariables": {
-						"INSV_Option": 4,
+						"INSV_Option": 99,
 						"INSV_Action": "Logo"
 					},
 					"behaviors": {
@@ -312,7 +312,7 @@
 					}
 				},
 				{
-					"type": "FONT_BeginMenu",
+					"type": "FONT_Menu",
 					"properties": {
 						"text": "Press E",
 						"enable-bbcode": true,
@@ -331,7 +331,7 @@
 					},
 					"uid": 30,
 					"instanceVariables": {
-						"INSV_Option": 5,
+						"INSV_Option": 98,
 						"INSV_Action": "Instructions"
 					},
 					"behaviors": {
@@ -349,9 +349,9 @@
 					},
 					"world": {
 						"x": 174.0607356054666,
-						"y": 238.10863490936393,
-						"width": 66.75618204808029,
-						"height": 15.646965128408056,
+						"y": 236.23034790711,
+						"width": 65.25355244627713,
+						"height": 11.890391123900201,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -403,5 +403,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "ES_BeginMenu"
+	"eventSheet": "ES_HomeMenu"
 }

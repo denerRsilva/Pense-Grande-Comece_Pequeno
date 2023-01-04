@@ -1,0 +1,378 @@
+{
+	"name": "MenuSettings",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "OBJ_BGMenu",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 31,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 230.26622458359515,
+						"y": 123.13048403703257,
+						"width": 289.7748611235989,
+						"height": 164.1003853364259,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OBJ_Cursor",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 37,
+					"instanceVariables": {
+						"INSV_Cursor": 1
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 106.05586931982975,
+						"y": 81.2322249694804,
+						"width": 163.90561017027687,
+						"height": 23.498114129561085,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "FONT_Menu",
+					"properties": {
+						"text": "Fullscreen",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left"
+					},
+					"uid": 32,
+					"instanceVariables": {
+						"INSV_Option": 1,
+						"INSV_Action": "Fullscreen"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"effects": {
+						"Brightness": {
+							"isEnabled": true,
+							"parameters": {
+								"brightness": 1
+							}
+						}
+					},
+					"world": {
+						"x": 110.06017650986999,
+						"y": 81.80812711932603,
+						"width": 160.92993358954314,
+						"height": 15.082491198354262,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "FONT_Menu",
+					"properties": {
+						"text": "Volume",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left"
+					},
+					"uid": 33,
+					"instanceVariables": {
+						"INSV_Option": 2,
+						"INSV_Action": "Volume"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"effects": {
+						"Brightness": {
+							"isEnabled": true,
+							"parameters": {
+								"brightness": 1
+							}
+						}
+					},
+					"world": {
+						"x": 110.06017650986999,
+						"y": 124.21788895657457,
+						"width": 98.93119606114558,
+						"height": 15.082491198354262,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "FONT_Menu",
+					"properties": {
+						"text": "Return",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left"
+					},
+					"uid": 34,
+					"instanceVariables": {
+						"INSV_Option": 3,
+						"INSV_Action": "Return"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"effects": {
+						"Brightness": {
+							"isEnabled": true,
+							"parameters": {
+								"brightness": 1
+							}
+						}
+					},
+					"world": {
+						"x": 110.06017650986999,
+						"y": 169.91686286142013,
+						"width": 96.91089254967127,
+						"height": 15.082491198354262,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "FONT_Menu",
+					"properties": {
+						"text": "",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left"
+					},
+					"uid": 35,
+					"instanceVariables": {
+						"INSV_Option": 0,
+						"INSV_Action": ""
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"effects": {
+						"Brightness": {
+							"isEnabled": true,
+							"parameters": {
+								"brightness": 1
+							}
+						}
+					},
+					"world": {
+						"x": 308.81709202110557,
+						"y": 81.80812711932603,
+						"width": 49.84466538928169,
+						"height": 15.082491198354262,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "FONT_Menu",
+					"properties": {
+						"text": "ON",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left"
+					},
+					"uid": 36,
+					"instanceVariables": {
+						"INSV_Option": 0,
+						"INSV_Action": ""
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"effects": {
+						"Brightness": {
+							"isEnabled": true,
+							"parameters": {
+								"brightness": 1
+							}
+						}
+					},
+					"world": {
+						"x": 308.81709202110557,
+						"y": 124.21788895657457,
+						"width": 42.14729361582104,
+						"height": 15.082491198354262,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 725977938277373,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 685964374407157,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 448,
+	"height": 252,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "ES_MenuSettings"
+}

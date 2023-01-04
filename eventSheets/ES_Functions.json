@@ -2,6 +2,10 @@
 	"name": "ES_Functions",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "ES_Variable"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "PlayerFunction",
@@ -193,6 +197,15 @@
 									"id": "cancel-fullscreen",
 									"objectClass": "Browser",
 									"sid": 108032284172615
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 680450916662851,
+									"parameters": {
+										"variable": "VAR_FullScreen",
+										"value": "\"ON\""
+									}
 								}
 							],
 							"sid": 768204017773579
@@ -214,6 +227,15 @@
 									"parameters": {
 										"mode": "stretch-letterbox-scale",
 										"navigation-ui": "auto"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 194952316455791,
+									"parameters": {
+										"variable": "VAR_FullScreen",
+										"value": "\"OFF\""
 									}
 								}
 							],

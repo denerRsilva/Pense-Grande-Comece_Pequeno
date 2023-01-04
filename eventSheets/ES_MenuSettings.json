@@ -1,0 +1,464 @@
+{
+	"name": "ES_MenuSettings",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Start2",
+			"description": "What happens on Start MenuBegin",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Manter o texto ON/OFF do FullScreen atualizado o tempo todo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 526664387361396
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "FONT_Menu",
+							"sid": 522644818004262,
+							"parameters": {
+								"unique-id": "35"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 602796885706722,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 466154417847965,
+									"parameters": {
+										"variable": "VAR_FullScreen",
+										"comparison": 0,
+										"value": "\"ON\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "FONT_Menu",
+									"sid": 739878623369312,
+									"parameters": {
+										"text": "VAR_FullScreen"
+									}
+								}
+							],
+							"sid": 591079178289676
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 994713419072449
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "FONT_Menu",
+									"sid": 148994540414805,
+									"parameters": {
+										"text": "VAR_FullScreen"
+									}
+								}
+							],
+							"sid": 907253853658895
+						}
+					]
+				}
+			],
+			"sid": 790622736603449
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Controle do Menu Inicial através das teclas W e S"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "MenuKeyboard2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Função de apertar tecla para baixo e trocar opção"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 398505909433831,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "OBJ_Cursor",
+									"sid": 255031988495814,
+									"parameters": {
+										"instance-variable": "INSV_Cursor",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "OBJ_Cursor",
+									"sid": 414361283311433,
+									"parameters": {
+										"instance-variable": "INSV_Cursor",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 465134863656977
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 611128075194785,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "OBJ_Cursor",
+									"sid": 795974644067568,
+									"parameters": {
+										"instance-variable": "INSV_Cursor",
+										"comparison": 2,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "OBJ_Cursor",
+									"sid": 509122859299871,
+									"parameters": {
+										"instance-variable": "INSV_Cursor",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 825186478875594
+						}
+					],
+					"sid": 496764299635412
+				},
+				{
+					"eventType": "comment",
+					"text": "Comportamento do Menu e animação"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "MenuControl2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Efeito de FLASH no OBJ_Cursor"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 292766375387119
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "OBJ_Cursor",
+									"sid": 903900490439513,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.5",
+										"off-time": "0.5",
+										"duration": "9999999999"
+									}
+								}
+							],
+							"sid": 830187276928015
+						},
+						{
+							"eventType": "comment",
+							"text": "Função de alinhar OBJ Cursor com Texto de Menu"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "FONT_Menu",
+									"sid": 622195937179853,
+									"parameters": {
+										"instance-variable": "INSV_Option",
+										"comparison": 0,
+										"value": "OBJ_Cursor.INSV_Cursor"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "OBJ_Cursor",
+									"sid": 523896559879544,
+									"parameters": {
+										"y": "FONT_Menu.Y"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "OBJ_Cursor",
+									"sid": 581817771018336,
+									"parameters": {
+										"width": "FONT_Menu.Width"
+									}
+								}
+							],
+							"sid": 349315831682269
+						},
+						{
+							"eventType": "comment",
+							"text": "Efeito de brilho nos textos do MENU"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "FONT_Menu",
+									"sid": 935467049560453,
+									"parameters": {
+										"instance-variable": "INSV_Option",
+										"comparison": 0,
+										"value": "OBJ_Cursor.INSV_Cursor"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-parameter",
+									"objectClass": "FONT_Menu",
+									"sid": 902063975825324,
+									"parameters": {
+										"effect": "\"Brightness\"",
+										"parameter-index": "0",
+										"value": "200"
+									}
+								}
+							],
+							"sid": 560557549017645
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "FONT_Menu",
+									"sid": 349110300374351,
+									"parameters": {
+										"instance-variable": "INSV_Option",
+										"comparison": 0,
+										"value": "OBJ_Cursor.INSV_Cursor"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-parameter",
+									"objectClass": "FONT_Menu",
+									"sid": 862065986741861,
+									"parameters": {
+										"effect": "\"Brightness\"",
+										"parameter-index": "0",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 666148877116184
+						}
+					],
+					"sid": 963495461223391
+				},
+				{
+					"eventType": "comment",
+					"text": "Ações do Menu: O que ele faz em cada Opção selecionada"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "MenuAction2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Sistema de ação no Menu, configuração do que fazer após pressionar a tecla ESPAÇO"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 436672802805460,
+									"parameters": {
+										"key": 69
+									}
+								}
+							],
+							"actions": [],
+							"sid": 751246503342364,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Verificar a opção selecionada e se caso confirmado... Executar decisões abaixo"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 798109329945067,
+											"parameters": {
+												"object": "FONT_Menu",
+												"expression": "FONT_Menu.INSV_Option",
+												"comparison": 0,
+												"value": "OBJ_Cursor.INSV_Cursor"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 325906711756210,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Ação: FULLSCREEN"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "FONT_Menu",
+													"sid": 102720339411721,
+													"parameters": {
+														"instance-variable": "INSV_Action",
+														"comparison": 0,
+														"value": "\"Fullscreen\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "FullScreen On/Off",
+													"sid": 550158931852324
+												}
+											],
+											"sid": 160815957182384
+										},
+										{
+											"eventType": "comment",
+											"text": "Ação: NEW GAME"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "FONT_Menu",
+													"sid": 206657657355342,
+													"parameters": {
+														"instance-variable": "INSV_Action",
+														"comparison": 0,
+														"value": "\"Volume\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 276296530022675
+										},
+										{
+											"eventType": "comment",
+											"text": "Ação: QUIT GAME"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "FONT_Menu",
+													"sid": 401121106718621,
+													"parameters": {
+														"instance-variable": "INSV_Action",
+														"comparison": 0,
+														"value": "\"Return\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 297594079149182,
+													"parameters": {
+														"layout": "HomeMenu"
+													}
+												}
+											],
+											"sid": 478083725076884
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 560968438089796
+				}
+			],
+			"sid": 283104575644727
+		}
+	],
+	"sid": 370635808854010
+}

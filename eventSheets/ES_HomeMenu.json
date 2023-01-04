@@ -1,5 +1,5 @@
 {
-	"name": "ES_BeginMenu",
+	"name": "ES_HomeMenu",
 	"events": [
 		{
 			"eventType": "include",
@@ -27,8 +27,13 @@
 					],
 					"actions": [
 						{
-							"callFunction": "FullScreen On/Off",
-							"sid": 112462538228515
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 949397413822734,
+							"parameters": {
+								"variable": "VAR_FullScreen",
+								"value": "\"ON\""
+							}
 						}
 					],
 					"sid": 450349792710103,
@@ -37,10 +42,14 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-fullscreen",
-									"objectClass": "Browser",
-									"sid": 770692861443578,
-									"isInverted": true
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 860097467335786,
+									"parameters": {
+										"variable": "VAR_FullScreen",
+										"comparison": 0,
+										"value": "\"ON\""
+									}
 								}
 							],
 							"actions": [
@@ -54,6 +63,10 @@
 					]
 				},
 				{
+					"eventType": "comment",
+					"text": "Após iniciar LAYOUT, piscar o \"PRESS E\""
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -63,7 +76,7 @@
 						},
 						{
 							"id": "pick-by-unique-id",
-							"objectClass": "FONT_BeginMenu",
+							"objectClass": "FONT_Menu",
 							"sid": 616341329135940,
 							"parameters": {
 								"unique-id": "30"
@@ -73,7 +86,7 @@
 					"actions": [
 						{
 							"id": "flash",
-							"objectClass": "FONT_BeginMenu",
+							"objectClass": "FONT_Menu",
 							"sid": 946853941969069,
 							"behaviorType": "Flash",
 							"parameters": {
@@ -231,7 +244,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "FONT_BeginMenu",
+									"objectClass": "FONT_Menu",
 									"sid": 547295007674715,
 									"parameters": {
 										"instance-variable": "INSV_Option",
@@ -244,9 +257,17 @@
 								{
 									"id": "set-x",
 									"objectClass": "OBJ_Cursor",
-									"sid": 216742622075493,
+									"sid": 775439430450396,
 									"parameters": {
-										"x": "FONT_BeginMenu.X-7"
+										"x": "FONT_Menu.X-4"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "OBJ_Cursor",
+									"sid": 829077213016187,
+									"parameters": {
+										"width": "FONT_Menu.Width"
 									}
 								}
 							],
@@ -261,7 +282,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "FONT_BeginMenu",
+									"objectClass": "FONT_Menu",
 									"sid": 815550180004279,
 									"parameters": {
 										"instance-variable": "INSV_Option",
@@ -273,7 +294,7 @@
 							"actions": [
 								{
 									"id": "set-effect-parameter",
-									"objectClass": "FONT_BeginMenu",
+									"objectClass": "FONT_Menu",
 									"sid": 839875317414896,
 									"parameters": {
 										"effect": "\"Brightness\"",
@@ -289,7 +310,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "FONT_BeginMenu",
+									"objectClass": "FONT_Menu",
 									"sid": 450843937988372,
 									"parameters": {
 										"instance-variable": "INSV_Option",
@@ -302,7 +323,7 @@
 							"actions": [
 								{
 									"id": "set-effect-parameter",
-									"objectClass": "FONT_BeginMenu",
+									"objectClass": "FONT_Menu",
 									"sid": 330928371923655,
 									"parameters": {
 										"effect": "\"Brightness\"",
@@ -348,7 +369,7 @@
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "Verificar a opção selecionada e após verificar..."
+									"text": "Verificar a opção selecionada e se caso confirmado... Executar decisões abaixo"
 								},
 								{
 									"eventType": "block",
@@ -358,8 +379,8 @@
 											"objectClass": "System",
 											"sid": 174575534331463,
 											"parameters": {
-												"object": "FONT_BeginMenu",
-												"expression": "FONT_BeginMenu.INSV_Option",
+												"object": "FONT_Menu",
+												"expression": "FONT_Menu.INSV_Option",
 												"comparison": 0,
 												"value": "OBJ_Cursor.INSV_Cursor"
 											}
@@ -377,7 +398,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "FONT_BeginMenu",
+													"objectClass": "FONT_Menu",
 													"sid": 361527016328673,
 													"parameters": {
 														"instance-variable": "INSV_Action",
@@ -407,7 +428,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "FONT_BeginMenu",
+													"objectClass": "FONT_Menu",
 													"sid": 137349681777436,
 													"parameters": {
 														"instance-variable": "INSV_Action",
@@ -418,9 +439,12 @@
 											],
 											"actions": [
 												{
-													"callFunction": "FullScreen On/Off",
-													"sid": 399863715343021,
-													"disabled": true
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 515618433852618,
+													"parameters": {
+														"layout": "MenuSettings"
+													}
 												}
 											],
 											"sid": 510926438280176
@@ -434,7 +458,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "FONT_BeginMenu",
+													"objectClass": "FONT_Menu",
 													"sid": 272703802317012,
 													"parameters": {
 														"instance-variable": "INSV_Action",
