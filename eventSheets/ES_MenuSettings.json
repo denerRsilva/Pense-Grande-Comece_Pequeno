@@ -4,7 +4,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Start2",
+			"title": "StartMenuSettings",
 			"description": "What happens on Start MenuBegin",
 			"isActiveOnStart": true,
 			"children": [
@@ -38,11 +38,11 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 466154417847965,
+									"sid": 900743937396717,
 									"parameters": {
 										"variable": "VAR_FullScreen",
 										"comparison": 0,
-										"value": "\"ON\""
+										"value": "\"OFF\""
 									}
 								}
 							],
@@ -87,7 +87,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Menu2",
+			"title": "MenuSettings",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [

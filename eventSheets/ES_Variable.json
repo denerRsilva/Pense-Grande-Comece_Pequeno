@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "VAR_FullScreen",
 			"type": "string",
-			"initialValue": "",
+			"initialValue": "ON",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,

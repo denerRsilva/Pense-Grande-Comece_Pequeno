@@ -14,30 +14,137 @@
 			"includeSheet": "ES_Player"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "ES_WorldMap01"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "CameraStart",
 			"description": "Player's camera configuration",
 			"isActiveOnStart": true,
+			"children": [],
+			"sid": 207904542714014
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Store",
+			"description": "Store's all configuration",
+			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "Ao iniciar Game, Definir como FullScreen"
-				},
-				{
 					"eventType": "block",
-					"conditions": [],
-					"actions": [
+					"conditions": [
 						{
-							"callFunction": "FullScreen On/Off",
-							"sid": 488759447023986
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 787532922586420,
+							"parameters": {
+								"key": 32
+							}
 						}
 					],
-					"sid": 604069553699435,
-					"disabled": true
+					"actions": [],
+					"sid": 699858921941310,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "OBJ_Player",
+									"sid": 720494100962130,
+									"parameters": {
+										"object": "OBJ_SmallShelf",
+										"offset-x": "1",
+										"offset-y": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Open_SmallShelf",
+									"sid": 430749606231016
+								}
+							],
+							"sid": 561943786443059,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "OBJ_Player",
+									"sid": 644157832183987,
+									"parameters": {
+										"object": "OBJ_SmallShelf",
+										"offset-x": "-1",
+										"offset-y": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Open_SmallShelf",
+									"sid": 961307531141140
+								}
+							],
+							"sid": 785958997546912,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "OBJ_Player",
+									"sid": 881002468235525,
+									"parameters": {
+										"object": "OBJ_SmallShelf",
+										"offset-x": "1",
+										"offset-y": "-1"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Close_SmallShelf",
+									"sid": 209778939862220
+								}
+							],
+							"sid": 954884993198323
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "OBJ_Player",
+									"sid": 741536808849133,
+									"parameters": {
+										"object": "OBJ_SmallShelf",
+										"offset-x": "-1",
+										"offset-y": "1"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Open_SmallShelf",
+									"sid": 827590771444421
+								}
+							],
+							"sid": 968595027164158
+						}
+					]
 				}
 			],
-			"sid": 207904542714014
+			"sid": 572906759229934
 		}
 	],
 	"sid": 164045968913928

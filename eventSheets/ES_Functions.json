@@ -17,7 +17,7 @@
 					"text": "Função de ANDAR para ESQUERDA: seta a variavel instanciada do OBJ_Player para animação de andar para ESQUERDA"
 				},
 				{
-					"functionName": "FUNC_Walk_Left",
+					"functionName": "Walk_Left",
 					"functionDescription": "Player moviment to left",
 					"functionCategory": "Player Moviment",
 					"functionReturnType": "none",
@@ -53,7 +53,7 @@
 					"text": "Função de ANDAR para DIREITA: seta a variavel instanciada do OBJ_Player para animação de andar para DIREITA"
 				},
 				{
-					"functionName": "FUNC_Walk_Right",
+					"functionName": "Walk_Right",
 					"functionDescription": "Player moviment to right",
 					"functionCategory": "Player Moviment",
 					"functionReturnType": "none",
@@ -89,7 +89,7 @@
 					"text": "Função de ANDAR para CIMA: seta a variavel instanciada do OBJ_Player para animação de andar para CIMA"
 				},
 				{
-					"functionName": "FUNC_Walk_Up",
+					"functionName": "Walk_Up",
 					"functionDescription": "Player moviment to up",
 					"functionCategory": "Player Moviment",
 					"functionReturnType": "none",
@@ -125,7 +125,7 @@
 					"text": "Função de ANDAR para BAIXO: seta a variavel instanciada do OBJ_Player para animação de andar para BAIXO"
 				},
 				{
-					"functionName": "FUNC_Walk_Down",
+					"functionName": "Walk_Down",
 					"functionDescription": "Player moviment to down",
 					"functionCategory": "Player Moviment",
 					"functionReturnType": "none",
@@ -201,10 +201,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 680450916662851,
+									"sid": 115000839720748,
 									"parameters": {
 										"variable": "VAR_FullScreen",
-										"value": "\"ON\""
+										"value": "\"OFF\""
 									}
 								}
 							],
@@ -232,10 +232,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 194952316455791,
+									"sid": 429995017546966,
 									"parameters": {
 										"variable": "VAR_FullScreen",
-										"value": "\"OFF\""
+										"value": "\"ON\""
 									}
 								}
 							],
@@ -245,6 +245,163 @@
 				}
 			],
 			"sid": 480573246339789
+		},
+		{
+			"functionName": "Open_SmallShelf",
+			"functionDescription": "Open Shelf Menu",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "OBJ_PlayerMenu",
+					"sid": 167717009799098,
+					"parameters": {
+						"x": "OBJ_BGMenuPlayer.X-130",
+						"y": "OBJ_BGMenuPlayer.Y+80"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OBJ_BGShelf",
+					"sid": 238394142679643,
+					"parameters": {
+						"visibility": "toggle"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "OBJ_BGShelf",
+					"sid": 266472526203521,
+					"parameters": {
+						"x": "OBJ_Player.X+150",
+						"y": "OBJ_Player.Y"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "OBJ_Player",
+					"sid": 927585038535375,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OBJ_Player",
+					"sid": 760912412947009,
+					"parameters": {
+						"visibility": "toggle"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "OBJ_BGShelf",
+					"sid": 697858221193104,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OBJ_PlayerMenu",
+					"sid": 193617991022601,
+					"parameters": {
+						"visibility": "toggle"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 901213664131332,
+					"parameters": {
+						"group-name": "\"MovimentKeyboard\"",
+						"state": "toggle-active"
+					}
+				}
+			],
+			"sid": 752449624342370
+		},
+		{
+			"functionName": "Close_SmallShelf",
+			"functionDescription": "Open Shelf Menu",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 771336244883919,
+					"parameters": {
+						"group-name": "\"Keyboard\"",
+						"state": "toggle-active"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "OBJ_BGShelf",
+					"sid": 194781909319209,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "OBJ_Player",
+					"sid": 464225602500818,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OBJ_BGShelf",
+					"sid": 459034829084736,
+					"parameters": {
+						"visibility": "toggle"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OBJ_PlayerMenu",
+					"sid": 752055557621878,
+					"parameters": {
+						"visibility": "toggle"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OBJ_Player",
+					"sid": 364667414168497,
+					"parameters": {
+						"visibility": "toggle"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 732097170067924,
+					"parameters": {
+						"group-name": "\"MovimentKeyboard\"",
+						"state": "toggle-active"
+					}
+				}
+			],
+			"sid": 421383576222811
 		}
 	],
 	"sid": 677030330867551

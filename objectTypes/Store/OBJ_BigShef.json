@@ -1,0 +1,63 @@
+{
+	"name": "OBJ_BigShef",
+	"plugin-id": "Sprite",
+	"sid": 349714377336003,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 742146289312668
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 657308,
+						"collisionPoly": {
+							"points": [
+								0.1875,
+								0.09375,
+								0.5,
+								0.046875,
+								0.78125,
+								0.09375,
+								0.78125,
+								0.5,
+								0.7890625,
+								0.87109375,
+								0.4921875,
+								0.859375,
+								0.2015625,
+								0.8726562500000001,
+								0.1875,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 395172606179196,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

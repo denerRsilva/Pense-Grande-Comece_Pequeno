@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "Configurações de movimentação do Player"
+			"text": "Configurações de Movimentação do Player"
 		},
 		{
 			"eventType": "group",
@@ -19,7 +19,7 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Keyboard",
+					"title": "MovimentKeyboard",
 					"description": "Keyboard moviment config",
 					"isActiveOnStart": true,
 					"children": [
@@ -37,7 +37,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "FUNC_Walk_Left",
+									"callFunction": "Walk_Left",
 									"sid": 948159293868477
 								}
 							],
@@ -57,7 +57,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "FUNC_Walk_Right",
+									"callFunction": "Walk_Right",
 									"sid": 931458839032304
 								}
 							],
@@ -77,7 +77,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "FUNC_Walk_Up",
+									"callFunction": "Walk_Up",
 									"sid": 964622211195393
 								}
 							],
@@ -97,7 +97,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "FUNC_Walk_Down",
+									"callFunction": "Walk_Down",
 									"sid": 746186664296824
 								}
 							],
@@ -111,7 +111,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Configurações de animação do Player"
+			"text": "Configurações de Animação do Player"
 		},
 		{
 			"eventType": "group",
@@ -324,7 +324,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Configurações de ações do Player"
+			"text": "Configurações de Ações do Player"
 		},
 		{
 			"eventType": "group",
@@ -334,6 +334,10 @@
 			"isActiveOnStart": true,
 			"children": [],
 			"sid": 491961197729690
+		},
+		{
+			"eventType": "comment",
+			"text": "Configurações de Menu do Player"
 		},
 		{
 			"eventType": "group",
@@ -369,11 +373,19 @@
 							],
 							"actions": [
 								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 111286774133544,
+									"parameters": {
+										"time-scale": "0"
+									}
+								},
+								{
 									"id": "set-visible",
 									"objectClass": "OBJ_BGMenuPlayer",
-									"sid": 452847045276670,
+									"sid": 283762129928173,
 									"parameters": {
-										"visibility": "visible"
+										"visibility": "toggle"
 									}
 								},
 								{
@@ -394,20 +406,37 @@
 									}
 								},
 								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 845326853934932,
-									"parameters": {
-										"time-scale": "0"
-									}
-								},
-								{
 									"id": "set-enabled",
 									"objectClass": "OBJ_Player",
-									"sid": 343882598164242,
+									"sid": 560653999752518,
 									"behaviorType": "ScrollTo",
 									"parameters": {
 										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "OBJ_PlayerMenu",
+									"sid": 425433414849289,
+									"parameters": {
+										"visibility": "toggle"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "OBJ_PlayerMenu",
+									"sid": 304715331368705,
+									"parameters": {
+										"x": "OBJ_BGMenuPlayer.X-130",
+										"y": "OBJ_BGMenuPlayer.Y+80"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "OBJ_Player",
+									"sid": 632505426799007,
+									"parameters": {
+										"visibility": "invisible"
 									}
 								},
 								{
@@ -422,14 +451,42 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 714424303188484,
+									"sid": 624310644190285,
 									"parameters": {
-										"group-name": "\"Keyboard\"",
+										"group-name": "\"MovimentKeyboard\"",
 										"state": "toggle-active"
 									}
 								}
 							],
-							"sid": 662436124040720
+							"sid": 662436124040720,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-time",
+											"objectClass": "System",
+											"sid": 891967574277936,
+											"parameters": {
+												"comparison": 0,
+												"time-seconds": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 110187809584016,
+											"parameters": {
+												"object": "OBJ_PlayerMenu",
+												"time-scale": "1.0"
+											}
+										}
+									],
+									"sid": 587149853230672
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -444,9 +501,9 @@
 								{
 									"id": "set-visible",
 									"objectClass": "OBJ_BGMenuPlayer",
-									"sid": 415427333895566,
+									"sid": 237682293885824,
 									"parameters": {
-										"visibility": "invisible"
+										"visibility": "toggle"
 									}
 								},
 								{
@@ -475,6 +532,22 @@
 									}
 								},
 								{
+									"id": "set-visible",
+									"objectClass": "OBJ_PlayerMenu",
+									"sid": 619809207282086,
+									"parameters": {
+										"visibility": "toggle"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "OBJ_Player",
+									"sid": 437079759995208,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
 									"id": "set-enabled",
 									"objectClass": "OBJ_BGMenuPlayer",
 									"sid": 633988429549692,
@@ -486,9 +559,9 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 834635191206451,
+									"sid": 419356838391112,
 									"parameters": {
-										"group-name": "\"Keyboard\"",
+										"group-name": "\"MovimentKeyboard\"",
 										"state": "toggle-active"
 									}
 								}

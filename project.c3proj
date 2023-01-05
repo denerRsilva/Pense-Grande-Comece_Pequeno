@@ -64,14 +64,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
@@ -79,9 +71,9 @@
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Flash",
-			"name": "Flash",
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -96,16 +88,24 @@
 		},
 		{
 			"type": "behavior",
-			"id": "EightDir",
-			"name": "8 Direction",
+			"id": "solid",
+			"name": "Solid",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -122,7 +122,6 @@
 	"uniqueId": "26chl2xft6a",
 	"objectTypes": {
 		"items": [
-			"OBJ_Player",
 			"Colliders",
 			"Tilemap",
 			"OBJ_LogoRR"
@@ -152,28 +151,47 @@
 			},
 			{
 				"items": [
-					"FONT_Menu"
+					"OBJ_SmallShelf",
+					"OBJ_BigShef"
 				],
 				"subfolders": [
 					{
 						"items": [
-							"OBJ_BGMenu",
-							"TXT_PressE",
-							"OBJ_Cursor"
+							"OBJ_BGShelf"
 						],
 						"subfolders": [],
-						"name": "HomeMenu"
-					},
+						"name": "Menu_Shelves"
+					}
+				],
+				"name": "Store"
+			},
+			{
+				"items": [
+					"OBJ_Player"
+				],
+				"subfolders": [
 					{
 						"items": [
 							"OBJ_BGMenuPlayer",
-							"OBJ_FaintScreen"
+							"OBJ_FaintScreen",
+							"OBJ_PlayerMenu",
+							"FONT_MenuPlayer"
 						],
 						"subfolders": [],
 						"name": "MenuPlayer"
 					}
 				],
-				"name": "Menu"
+				"name": "Player"
+			},
+			{
+				"items": [
+					"OBJ_BGMenu",
+					"TXT_PressE",
+					"OBJ_Cursor",
+					"FONT_Menu"
+				],
+				"subfolders": [],
+				"name": "HomeMenu"
 			}
 		]
 	},

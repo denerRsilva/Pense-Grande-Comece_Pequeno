@@ -17,52 +17,6 @@
 					"text": "Iniciar jogo em FULLSCREEN quando executar em NW.js"
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 781848788356142
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 949397413822734,
-							"parameters": {
-								"variable": "VAR_FullScreen",
-								"value": "\"ON\""
-							}
-						}
-					],
-					"sid": 450349792710103,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 860097467335786,
-									"parameters": {
-										"variable": "VAR_FullScreen",
-										"comparison": 0,
-										"value": "\"ON\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "FullScreen On/Off",
-									"sid": 373956773437150
-								}
-							],
-							"sid": 293765985149184
-						}
-					]
-				},
-				{
 					"eventType": "comment",
 					"text": "Após iniciar LAYOUT, piscar o \"PRESS E\""
 				},
